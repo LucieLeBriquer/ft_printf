@@ -1,0 +1,4 @@
+- creer une fonction d'affichage pour chaque type
+- verifier la conversion
+- verifier le typage de toute la string avant pour afficher un Format erreur et ne travailler que si ok
+- changer l'affichage char par char par un putstr jusqu'a %

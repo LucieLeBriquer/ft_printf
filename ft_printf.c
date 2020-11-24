@@ -23,12 +23,12 @@ void	init_param(t_print *param)
 
 void	print_param(t_print p)
 {
-	printf("--- config ---\n");
+	printf("\n--- param ---\n");
 	printf("\talign = %d", p.align);
 	printf("\tzero = %d", p.zero);
 	printf("\tfield = %d", p.field);
 	printf("\tprecision = %d", p.precision);
-	printf("\ttype = %d", p.type);
+	printf("\ttype = %d\n", p.type);
 }
 
 /*
@@ -86,9 +86,6 @@ const char	*fill_then_print(t_print *param, const char *str, va_list args)
 {
 	int		nb;
 
-	nb = is_coherent(str);
-	if (nb < 0)
-		return (NULL);
 	param->type = is_type(*str);
 	if (*str == '-' && str++)
 		param->align = 1;
@@ -113,11 +110,32 @@ const char	*fill_then_print(t_print *param, const char *str, va_list args)
 	return (++str);
 }
 
+int		is_all_coherent(const char *str)
+{
+	while (*str)
+	{
+		if (*str != '%')
+			str++;
+		else
+		{
+			str++;
+			if (is_coherent(str) < 0)
+				return (0);
+		}
+	}
+	return (1);
+}
+
 int		ft_printf(const char *str, ...)
 {
 	va_list args;
 	t_print	param;
 
+	if (!is_all_coherent(str))
+	{
+		ft_putstr("Format error\n");
+		return (0);
+	}
 	va_start(args, str);
 	while (*str)
 	{
@@ -133,7 +151,7 @@ int		ft_printf(const char *str, ...)
 			str = fill_then_print(&param, str, args);
 			if (!str)
 			{
-				ft_putstr("Format error\n");
+				ft_putstr("Conversion error\n");
 				return (-1);
 			}
 			print_param(param);
@@ -144,6 +162,6 @@ int		ft_printf(const char *str, ...)
 
 int		main()
 {
-	ft_printf("%02.*d", 200, 12);
+	ft_printf("hello %02.*d my %s %0-124d", 200, 12, "blop");
 	return (0);
 }
