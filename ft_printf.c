@@ -34,7 +34,11 @@ int			ft_printf(const char *str, ...)
 
 int		main()
 {
-	ft_printf("[%6.2s] [%-10.1s]\n", "test", "bonjour");
-	printf("[%6.2s] [%-10.1s]\n", "test", "bonjour");
+	ft_printf("[%-2s]\n", "bonjour");
+	printf("[%-2s]\n", "bonjour");
+	ft_printf("[%-10.5s]\n", "ohayo");
+	printf("[%-10.5s]\n", "ohayo");
+	ft_printf("[%1.2s]\n", "plop");
+	printf("[%1.2s]\n", "plop");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/25 20:44:12 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:04:14 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,13 @@ void	fill_str(char **to_print, char *str, t_print param, int size)
 		fill_str_right(to_print, str, param, size);
 }
 
+int		size_tot(t_print param, int len)
+{
+	if (param.precision == -1 || param.precision >= len)
+		return (ft_max(param.field, len) + 1);
+	return (ft_max(param.precision, param.field));
+}
+
 int		print_1str(t_print param, va_list args)
 {
 	char	*str;
@@ -63,7 +70,7 @@ int		print_1str(t_print param, va_list args)
 
 	str = va_arg(args, char *);
 	len = ft_strlen(str);
-	size = ft_max(param.field, len) + 1;
+	size = size_tot(param, len);
 	to_print = malloc(size * sizeof(char));
 	if (!to_print)
 		return (0);

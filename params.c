@@ -4,8 +4,8 @@ void		init_param(t_print *param)
 {
 	param->align = 0;
 	param->zero = 0;
-	param->field = 0;
-	param->precision = 0;
+	param->field = -1;
+	param->precision = -1;
 	param->type = -1;
 }
 
@@ -28,7 +28,7 @@ const char	*parse_param(t_print *param, const char *str, va_list args)
 			nb = ft_atoi(str);
 		while (ft_isdigit(*str))
 			str++;
-		if (param->precision && (nb > 0))
+		if (param->precision == 1 && (nb > 0))
 			param->precision = nb;
 		else if (nb > 0)
 			param->field = nb;
@@ -36,3 +36,8 @@ const char	*parse_param(t_print *param, const char *str, va_list args)
 	}
 	return (++str);
 }
+
+/*
+ * mettre un while autour des - et des 0 pour gerer 0 avant et/ou apres
+ *
+ */

@@ -36,6 +36,8 @@ int			ft_max(int a, int b)
 
 int			ft_min(int a, int b)
 {
+	if (a == -1)
+		return (b);
 	if (a < b)
 		return (a);
 	return (b);
