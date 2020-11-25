@@ -34,6 +34,7 @@ int			ft_printf(const char *str, ...)
 
 int		main()
 {
-	ft_printf("hello %02.*d my %s %-124x\n", 200, 12, "blop");
+	ft_printf("[%6.2s] [%-10.1s]\n", "test", "bonjour");
+	printf("[%6.2s] [%-10.1s]\n", "test", "bonjour");
 	return (0);
 }

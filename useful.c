@@ -26,3 +26,17 @@ const char	*print_str_classic(const char *str, int *nb_char)
 	(*nb_char)+=i;
 	return (str);
 }
+
+int			ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+int			ft_min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
