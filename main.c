@@ -25,6 +25,9 @@ int		main()
 {
 	int res1;
 	int res2;
+	int	*ptr;
+	
+	ptr = &res1;
 	
 	printt("[ 0 - TESTS SUR LES CHAR ]");
 	printst("6c  c='a'");
@@ -65,6 +68,17 @@ int		main()
 	res1 = ft_printf("[%10.4s]\n", "ohayo");
 	res2 = printf("[%10.4s]\n", "ohayo");
 	printf("mine = %d\torig = %d\n", res1, res2);
+	
+	printt("\n\n[ 2 - TESTS SUR LES POINTEURS ]");
+	printst("-30p");
+	res1 = ft_printf("[%-30p]\n", ptr);
+	res2 = printf("[%-30p]\n", ptr);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("40p");
+	res1 = ft_printf("[%40p]\n", ptr);
+	res2 = printf("[%40p]\n", ptr);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	/* pas de precision sur les pointeurs */
 	
 	printt("\n\n[ 3 - TESTS SUR LES INTD ]");
 	printst("-5d  d = 125");
