@@ -2,6 +2,9 @@ CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
 NAME		= ft_print
+INCS		= ft_print.h
+INCS_DIR	= includes
+LIB			= includes/libft.a
 
 SRCS		= ft_printf.c \
 			parse/errors.c \
@@ -17,10 +20,6 @@ SRCS		= ft_printf.c \
 			print/print.c \
 			utils/useful.c \
 			utils/tohelp.c
-
-INCS		= ft_print.h
-INCS_DIR	= includes
-LIB			= includes/libft.a
 
 OBJS		= $(SRCS:.c=.o)
 
