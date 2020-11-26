@@ -29,7 +29,7 @@ OBJS		= $(SRCS:.c=.o)
 all			: $(NAME)
 
 $(NAME)		: $(OBJS)
-			$(CC) $(CFLAGS) -I$(INCS_DIR) main.c $(OBJS) -o tests $(LIB)
+			$(CC) -I$(INCS_DIR) main.c $(OBJS) -o tests $(LIB)
 
 clean:
 			$(RM) $(OBJS)

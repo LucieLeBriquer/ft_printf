@@ -22,15 +22,24 @@ const char	*parse_align_zero(t_print *param, const char *str)
 	return (str);
 }
 
-void		negative_stars(t_print *param)
+static void	fill_star(t_print *param, int nb)
 {
-	if (param->field < 0)
+	if (param->precision == 1)
 	{
-		param->field = (-1) * (param->field);
-		param->align = 1;
+		param->precision = nb;
+		if (nb < 0)
+			param->precision = -1;
 	}
-	if (param->precision < 0)
-		param->precision = -1;
+	else
+	{
+		if (nb < 0)
+		{
+			param->field = (-1) * nb;
+			param->align = 1;
+		}
+		else
+			param->field = nb;
+	}
 }
 
 const char	*parse_param(t_print *param, const char *str, va_list args)
@@ -49,12 +58,8 @@ const char	*parse_param(t_print *param, const char *str, va_list args)
 			nb = ft_atoi(str);
 		while (ft_isdigit(*str))
 			str++;
-		if (param->precision == 1)
-			param->precision = nb;
-		else
-			param->field = nb;
+		fill_star(param, nb);
 		param->type = is_type(*str);
 	}
-	negative_stars(param);
 	return (++str);
 }

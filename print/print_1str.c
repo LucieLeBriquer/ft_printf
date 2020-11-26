@@ -6,13 +6,13 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/26 17:53:59 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/26 22:10:46 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	fill_str_right(char **to_print, char *str, t_print param, int size)
+static void	fill_str_right(char **to_print, char *str, t_print param, int size)
 {
 	int		len;
 	int		to_keep;
@@ -29,7 +29,7 @@ void	fill_str_right(char **to_print, char *str, t_print param, int size)
 		(*to_print)[i] = ' ';
 }
 
-void	fill_str_left(char **to_print, char *str, t_print param, int size)
+static void	fill_str_left(char **to_print, char *str, t_print param, int size)
 {
 	int		len;
 	int		to_keep;
@@ -46,7 +46,7 @@ void	fill_str_left(char **to_print, char *str, t_print param, int size)
 		(*to_print)[i] = str[i];
 }
 
-void	fill_str(char **to_print, char *str, t_print param, int size)
+static void	fill_str(char **to_print, char *str, t_print param, int size)
 {
 	if (param.align)
 		fill_str_left(to_print, str, param, size);
@@ -54,7 +54,7 @@ void	fill_str(char **to_print, char *str, t_print param, int size)
 		fill_str_right(to_print, str, param, size);
 }
 
-int		size_tot(t_print param, int len)
+static int	size_tot(t_print param, int len)
 {
 	if (param.precision == -1 || param.precision >= len)
 		return (ft_max(param.field, len) + 1);
