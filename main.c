@@ -59,14 +59,6 @@ int		main()
 	printf("mine = %d\torig = %d\n", res1, res2);
 	
 	printt("\n\n[ 3 - TESTS SUR LES INTD ]");
-	printst("05d  d = 125");
-	res1 = ft_printf("[%05d]\n", 125);
-	res2 = printf("[%05d]\n", 125);
-	printf("mine = %d\torig = %d\n", res1, res2);
-	printst("5d  d = 125");
-	res1 = ft_printf("[%5d]\n", 125);
-	res2 = printf("[%5d]\n", 125);
-	printf("mine = %d\torig = %d\n", res1, res2);
 	printst("-5d  d = 125");
 	res1 = ft_printf("[%-5d]\n", 125);
 	res2 = printf("[%-5d]\n", 125);
@@ -78,6 +70,10 @@ int		main()
 	printst("-10.6d  d = -125");
 	res1 = ft_printf("[%-10.6d]\n", -125);
 	res2 = printf("[%-10.6d]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("-10.2d  d = -125");
+	res1 = ft_printf("[%-10.2d]\n", -125);
+	res2 = printf("[%-10.2d]\n", -125);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	printst("10.6d  d = -125");
 	res1 = ft_printf("[%10.6d]\n", -125);

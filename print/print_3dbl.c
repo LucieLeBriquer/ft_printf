@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/26 23:20:12 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 00:03:01 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,22 @@ static void	fill_str_right_p(char **to_print, char *nb, t_print param, int size)
 		(*to_print)[i] = ' ';
 }
 
+static void	fill_str_right(char **to_print, char *nb, int size)
+{
+	int		len;
+	int		i;
+	int		j;
+
+	i = -1;
+	while (++i < size)
+		(*to_print)[i] = ' ';
+	len = ft_strlen(nb);
+	i = len;
+	j = size - 1;
+	while (--i >= 0 && --j >= 0)
+		(*to_print)[j] = nb[i];
+}
+
 static void	fill_str_left_p(char **to_print, char *nb, t_print param, int size)
 {
 	int		len;
@@ -62,29 +78,63 @@ static void	fill_str_left_p(char **to_print, char *nb, t_print param, int size)
 static void	fill_str_left(char **to_print, char *nb, int size)
 {
 	int		len;
-	int		sg;
 	int		i;
 
 	len = ft_strlen(nb);
-	sg = (nb[0] == '-');
-	if (sg)
-		(*to_print)[0] = '-';
 	i = -1;
-	while (++i + sg < len)
-		(*to_print)[i] = nb[sg + i];
+	while (++i < len)
+		(*to_print)[i] = nb[i];
 	while (i < size - 1)
 		(*to_print)[i++] = ' ';
 }
 
+static void	fill_str_zero(char **to_print, char *nb, int size)
+{
+	int		len;
+	int		i;
+	int		sg;
+
+	i = -1;
+	sg = (nb[0] == '-');
+	len = ft_strlen(nb);
+	while (++i < size - 1)
+		(*to_print)[i] = '0';
+	i = -1;
+	if (sg)
+	{
+		(*to_print)[0] = '-';
+		i++;
+	}
+	while (++i <= len - sg)
+		(*to_print)[size - 1 - i] = nb[len - i];
+}
+
+static void	fill_str_easy(char **to_print, char *nb, int size)
+{
+	int		i;
+
+	i = -1;
+	while (++i < size - 1)
+		(*to_print)[i] = nb[i];
+}
+
 static void	fill_str(char **to_print, char *nb, t_print param, int size)
 {
-	if (param.align && param.precision > 0)
+	int		prec;
+
+	prec = (int)ft_strlen(nb) - (nb[0] == '-');
+	if (param.align && param.precision > prec)
 		fill_str_left_p(to_print, nb, param, size);
 	else if (param.align)
 		fill_str_left(to_print, nb, size);
-	else if (param.precision > (int)ft_strlen(nb) - (nb[0] == '-'))
+	else if (param.precision > prec)
 		fill_str_right_p(to_print, nb, param, size);
-	/* else */
+	else if (param.precision > 0)
+		fill_str_right(to_print, nb, size);
+	else if (param.zero && param.field > 0)
+		fill_str_zero(to_print, nb, size);
+	else
+		fill_str_easy(to_print, nb, size);
 	(*to_print)[size - 1] = '\0';
 }
 
