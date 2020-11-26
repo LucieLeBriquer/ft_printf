@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/26 18:04:46 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/26 18:04:48 by lle-briq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 /*
@@ -30,15 +42,4 @@ int			ft_printf(const char *str, ...)
 		}
 	}
 	return (nb_char);
-}
-
-int		main()
-{
-	ft_printf("[%-2s]\n", "bonjour");
-	printf("[%-2s]\n", "bonjour");
-	ft_printf("[%-10.5s]\n", "ohayo");
-	printf("[%-10.5s]\n", "ohayo");
-	ft_printf("[%1.2s]\n", "plop");
-	printf("[%1.2s]\n", "plop");
-	return (0);
 }

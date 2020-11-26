@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/25 21:04:14 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/26 17:53:59 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		size_tot(t_print param, int len)
 {
 	if (param.precision == -1 || param.precision >= len)
 		return (ft_max(param.field, len) + 1);
-	return (ft_max(param.precision, param.field));
+	return (ft_max(param.precision, param.field) + 1);
 }
 
 int		print_1str(t_print param, va_list args)
@@ -70,6 +70,8 @@ int		print_1str(t_print param, va_list args)
 
 	str = va_arg(args, char *);
 	len = ft_strlen(str);
+	if (len == 0)
+		return (0);
 	size = size_tot(param, len);
 	to_print = malloc(size * sizeof(char));
 	if (!to_print)
@@ -77,5 +79,5 @@ int		print_1str(t_print param, va_list args)
 	fill_str(&to_print, str, param, size);
 	ft_putstr(to_print);
 	free(to_print);
-	return (1);
+	return (size - 1);
 }

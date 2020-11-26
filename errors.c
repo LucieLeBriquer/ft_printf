@@ -28,9 +28,7 @@ int			is_type(char c)
 
 int			is_coherent(const char *str)
 {
-	while (*str == '-')
-		str++;
-	while (*str == '0')
+	while (*str == '-' || *str == '0')
 		str++;
 	if (*str == '*')
 		str++;
