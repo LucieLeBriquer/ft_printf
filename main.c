@@ -27,6 +27,14 @@ int		main()
 	int res2;
 	
 	printt("[ 0 - TESTS SUR LES CHAR ]");
+	printst("6c  c='a'");
+	res1 = ft_printf("[%6c]\n", 'a');
+	res2 = printf("[%6c]\n", 'a');
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("-6c  c='a'");
+	res1 = ft_printf("[%-6c]\n", 'a');
+	res2 = printf("[%-6c]\n", 'a');
+	printf("mine = %d\torig = %d\n", res1, res2);
 
 	printt("\n\n[ 1 - TESTS SUR LES STRINGS ]");
 	printst("-2s  s=bonjour");
