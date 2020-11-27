@@ -31,10 +31,11 @@ all			: $(NAME)
 $(NAME)		: $(OBJS)
 			make -C ./libft
 			cp libft/libft.* includes/
-			ar rcs libftprintf.a $(OBJS)
+			ar q libft/libft.a $(OBJS)
+			cp libft/libft.a libftprintf.a
 		
 test		: all
-			$(CC) -I$(INCS_DIR) main.c $(NAME) $(LIB) -o tests
+			$(CC) -I$(INCS_DIR) main.c $(NAME) -o tests
 			./tests
 
 clean:
