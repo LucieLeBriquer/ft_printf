@@ -24,7 +24,7 @@ SRCS		= ft_isalnum.c \
 			  ft_itoa.c \
 			  ft_utoa.c \
 			  ft_utox.c \
-			  ft_utoX.c \
+			  ft_utoxx.c \
 			  ft_split.c \
 			  ft_strchr.c \
 			  ft_strjoin.c \

@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 00:08:59 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 16:02:37 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:08:08 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int				ft_atoi(const char *nptr);
 char			*ft_itoa(int n);
 char			*ft_utoa(unsigned int n);
 char			*ft_utox(unsigned int n);
-char			*ft_utoX(unsigned int n);
+char			*ft_utoxx(unsigned int n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utoX.c                                          :+:      :+:    :+:   */
+/*   ft_utoxx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 11:14:48 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 16:04:26 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:07:57 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	utoX_size(unsigned int nb)
 	return (1 + utoX_size(nb / 16));
 }
 
-char		*ft_utoX(unsigned int n)
+char		*ft_utoxx(unsigned int n)
 {
 	char	*res;
 	char	*base;
