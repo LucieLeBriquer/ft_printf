@@ -32,6 +32,7 @@ int			is_all_coherent(const char *str);
 const char	*print_str_classic(const char *str, int *nb_char);
 void		print_param(t_print p, va_list args, int *nb_char);
 int			ft_printf(const char *str, ...);
+void		fill_str_s(char **to_print, char *str, t_print param, int size);
 int			print_0chr(t_print param, va_list args);
 int			print_1str(t_print param, va_list args);
 int			print_2ptr(t_print param, va_list args);

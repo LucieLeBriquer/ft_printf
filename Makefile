@@ -27,7 +27,8 @@ SRCS		= ft_printf.c \
 			utils/ft_substr.c \
 			utils/ft_utoa.c \
 			utils/ft_utox.c \
-			utils/ft_utoxx.c
+			utils/ft_utoxx.c \
+			utils/utils_str.c
 
 OBJS		= $(SRCS:.c=.o)
 

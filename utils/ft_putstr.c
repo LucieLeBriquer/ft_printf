@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 11:10:46 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 17:48:38 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 18:03:25 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_putstr(char *s)
 	if (!s)
 		return ;
 	l = ft_strlen(s);
-	write(0, s, l);
+	write(1, s, l);
 }

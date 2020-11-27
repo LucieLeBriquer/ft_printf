@@ -6,53 +6,11 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/26 22:10:46 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 18:42:08 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static void	fill_str_right(char **to_print, char *str, t_print param, int size)
-{
-	int		len;
-	int		to_keep;
-	int		i;
-
-	len = ft_strlen(str);
-	to_keep = ft_min(param.precision, len);
-	i = -1;
-	(*to_print)[size - 1] = '\0';
-	while (++i < to_keep)
-		(*to_print)[size - to_keep + i - 1] = str[i];
-	i = -1;
-	while (++i < size - to_keep - 1)
-		(*to_print)[i] = ' ';
-}
-
-static void	fill_str_left(char **to_print, char *str, t_print param, int size)
-{
-	int		len;
-	int		to_keep;
-	int		i;
-
-	len = ft_strlen(str);
-	to_keep = ft_min(param.precision, len);
-	(*to_print)[size - 1] = '\0';
-	i = to_keep - 1;
-	while (++i < size - 1)
-		(*to_print)[i] = ' ';
-	i = -1;
-	while (++i < to_keep)
-		(*to_print)[i] = str[i];
-}
-
-static void	fill_str(char **to_print, char *str, t_print param, int size)
-{
-	if (param.align)
-		fill_str_left(to_print, str, param, size);
-	else
-		fill_str_right(to_print, str, param, size);
-}
 
 static int	size_tot(t_print param, int len)
 {
@@ -76,7 +34,7 @@ int		print_1str(t_print param, va_list args)
 	to_print = malloc(size * sizeof(char));
 	if (!to_print)
 		return (0);
-	fill_str(&to_print, str, param, size);
+	fill_str_s(&to_print, str, param, size);
 	ft_putstr(to_print);
 	free(to_print);
 	return (size - 1);

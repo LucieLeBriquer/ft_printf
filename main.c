@@ -39,6 +39,10 @@ int		main()
 	res1 = ft_printf("[%-6c]\n", 'a');
 	res2 = printf("[%-6c]\n", 'a');
 	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("c  c='\\x00'");
+	res1 = ft_printf("[%c]\n", '\x00');
+	res2 = printf("[%c]\n", '\x00');
+	printf("mine = %d\torig = %d\n", res1, res2);
 
 	printt("\n\n[ 1 - TESTS SUR LES STRINGS ]");
 	printst("-2s  s=bonjour");
