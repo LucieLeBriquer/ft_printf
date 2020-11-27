@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 00:03:01 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 15:48:01 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ static void	fill_str_right_p(char **to_print, char *nb, t_print param, int size)
 
 	len = ft_strlen(nb);
 	sg = (nb[0] == '-');
-	i = sg - 1;
-	while (++i < len)
-		(*to_print)[size - 2 + i - len + sg] = nb[i];
+	i = len;
+	while (--i >= sg)
+		(*to_print)[size - len + i - 1] = nb[i];
 	i = size - param.precision - 1;
 	if (sg)
-	{
 		(*to_print)[i - 1] = '-';
-		i--;
-	}
+	i--;
 	while (++i < size + sg - len - 1)
 		(*to_print)[i] = '0';
 	i = -1;

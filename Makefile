@@ -35,6 +35,7 @@ $(NAME)		: $(OBJS)
 		
 test		: all
 			$(CC) -I$(INCS_DIR) main.c $(NAME) $(LIB) -o tests
+			./tests
 
 clean:
 			make clean -C ./libft
