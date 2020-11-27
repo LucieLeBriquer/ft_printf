@@ -39,9 +39,9 @@ int		main()
 	res1 = ft_printf("[%-6c]\n", 'a');
 	res2 = printf("[%-6c]\n", 'a');
 	printf("mine = %d\torig = %d\n", res1, res2);
-	printst("c  c='\\x00'");
-	res1 = ft_printf("[%c]\n", '\x00');
-	res2 = printf("[%c]\n", '\x00');
+	printst("-5c  c='\\x00'");
+	res1 = ft_printf("[%-5c]\n", '\x00');
+	res2 = printf("[%-5c]\n", '\x00');
 	printf("mine = %d\torig = %d\n", res1, res2);
 
 	printt("\n\n[ 1 - TESTS SUR LES STRINGS ]");
@@ -69,9 +69,21 @@ int		main()
 	res1 = ft_printf("[%s]\n", "");
 	res2 = printf("[%s]\n", "");
 	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("2s  s=\"\"");
+	res1 = ft_printf("[%2s]\n", "");
+	res2 = printf("[%2s]\n", "");
+	printf("mine = %d\torig = %d\n", res1, res2);
 	printst("10.4s  s=ohayo");
 	res1 = ft_printf("[%10.4s]\n", "ohayo");
 	res2 = printf("[%10.4s]\n", "ohayo");
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("10.4s  s = NULL");
+	res1 = ft_printf("[%10.4s]\n", NULL);
+	res2 = printf("[%10.4s]\n", NULL);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("10s  s = NULL");
+	res1 = ft_printf("[%10s]\n", NULL);
+	res2 = printf("[%10s]\n", NULL);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	
 	printt("\n\n[ 2 - TESTS SUR LES POINTEURS ]");
