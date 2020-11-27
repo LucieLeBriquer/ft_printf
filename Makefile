@@ -1,7 +1,7 @@
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
-NAME		= ft_print
+NAME		= libftprintf.a
 INCS		= ft_print.h
 INCS_DIR	= includes
 LIB			= includes/libft.a
@@ -29,13 +29,19 @@ OBJS		= $(SRCS:.c=.o)
 all			: $(NAME)
 
 $(NAME)		: $(OBJS)
-			$(CC) -I$(INCS_DIR) main.c $(OBJS) -o tests $(LIB)
+			make -C ./libft
+			cp libft/libft.* includes/
+			ar rcs libftprintf.a $(OBJS)
+		
+test		: all
+			$(CC) -I$(INCS_DIR) main.c $(NAME) $(LIB) -o tests
 
 clean:
+			make clean -C ./libft
 			$(RM) $(OBJS)
 
 fclean		: clean
-			$(RM) $(NAME)
+			$(RM) $(NAME) $(LIB) tests
 
 re			: fclean all
 

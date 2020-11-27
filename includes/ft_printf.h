@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
-#include "libft.h"
+#include "../libft/libft.h"
 
 #include <stdio.h>
 

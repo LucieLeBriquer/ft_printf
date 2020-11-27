@@ -149,5 +149,14 @@ int		main()
 	res2 = printf("[%.2i]\n", -125);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	
+	printt("\n\n[ 5 - TESTS SUR LES UNSIGNED ]");
+	printst("-5u  u = 125");
+	res1 = ft_printf("[%-5u]\n", 125);
+	res2 = printf("[%-5u]\n", 125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("05u  u = -125");
+	res1 = ft_printf("[%05u]\n", -125);
+	res2 = printf("[%05u]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
 	return (0);
 }
