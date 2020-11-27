@@ -98,6 +98,10 @@ int		main()
 	/* pas de precision sur les pointeurs */
 	
 	printt("\n\n[ 3 - TESTS SUR LES INTD ]");
+	printst("5d  d = 125");
+	res1 = ft_printf("[%5d]\n", 125);
+	res2 = printf("[%5d]\n", 125);
+	printf("mine = %d\torig = %d\n", res1, res2);
 	printst("-5d  d = 125");
 	res1 = ft_printf("[%-5d]\n", 125);
 	res2 = printf("[%-5d]\n", 125);
@@ -133,6 +137,14 @@ int		main()
 	printst("040d  d = int_min");
 	res1 = ft_printf("[%040d]\n", INT_MIN);
 	res2 = printf("[%040d]\n", INT_MIN);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("5.2d  d = 0");
+	res1 = ft_printf("[%5.2d]\n", 0);
+	res2 = printf("[%5.2d]\n", 0);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("5.d  d = 0");
+	res1 = ft_printf("[%5.0d]\n", 0);
+	res2 = printf("[%5.0d]\n", 0);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	
 	printt("\n\n[ 4 - TESTS SUR LES INTI ]");

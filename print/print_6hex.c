@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 16:05:05 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:45:56 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ static void	fill_str(char **to_print, char *nb, t_print param, int size)
 		fill_str_right_p(to_print, nb, param, size);
 	else if (param.precision > 0)
 		fill_str_right(to_print, nb, size);
+	else if (!param.zero && param.field > 0)
+		fill_str_right(to_print, nb, size);
 	else if (param.zero && param.field > 0)
 		fill_str_zero(to_print, nb, size);
 	else
@@ -139,6 +141,8 @@ int		print_6hex(t_print param, va_list args)
 
 	nb = (unsigned int)va_arg(args, int);
 	nb_utox = ft_utox(nb);
+	if (nb == 0 && param.precision == 0)
+		nb_utox[0] = '\0';
 	size = size_tot(param, nb_utox);
 	to_print = malloc(size * sizeof(char));
 	if (!to_print)
