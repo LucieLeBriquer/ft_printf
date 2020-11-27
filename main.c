@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include <limits.h>
 
 #define white "\033[0m"
 #define cyanB "\033[1;36m"
@@ -108,6 +109,14 @@ int		main()
 	printst(".2d  d = -125");
 	res1 = ft_printf("[%.2d]\n", -125);
 	res2 = printf("[%.2d]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("d  d = int_max");
+	res1 = ft_printf("[%d]\n", INT_MAX);
+	res2 = printf("[%d]\n", INT_MAX);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("040d  d = int_min");
+	res1 = ft_printf("[%040d]\n", INT_MIN);
+	res2 = printf("[%040d]\n", INT_MIN);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	
 	printt("\n\n[ 4 - TESTS SUR LES INTI ]");
