@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 16:06:37 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:09:35 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ int		print_7heX(t_print param, va_list args)
 	char		*to_print;
 
 	nb = (unsigned int)va_arg(args, int);
-	nb_utoX = ft_utoX(nb);
+	nb_utoX = ft_utoxx(nb);
 	size = size_tot(param, nb_utoX);
 	to_print = malloc(size * sizeof(char));
 	if (!to_print)
