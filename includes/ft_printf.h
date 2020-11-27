@@ -20,6 +20,7 @@ char		*ft_utox(unsigned int n);
 char		*ft_utoxx(unsigned int n);
 void		ft_putstr(char *s);
 int			ft_isdigit(int c);
+char		*ft_substr(const char *s, unsigned int start, size_t len);
 int			ft_max(int a, int b);
 int			ft_min(int a, int b);
 void		init_param(t_print *param);

@@ -24,6 +24,7 @@ SRCS		= ft_printf.c \
 			utils/ft_itoa.c \
 			utils/ft_putstr.c \
 			utils/ft_strlen.c \
+			utils/ft_substr.c \
 			utils/ft_utoa.c \
 			utils/ft_utox.c \
 			utils/ft_utoxx.c
