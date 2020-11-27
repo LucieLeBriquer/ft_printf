@@ -110,5 +110,35 @@ int		main()
 	res2 = printf("[%.2d]\n", -125);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	
+	printt("\n\n[ 4 - TESTS SUR LES INTI ]");
+	printst("-5i  i = 125");
+	res1 = ft_printf("[%-5i]\n", 125);
+	res2 = printf("[%-5i]\n", 125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("06i  i = -125");
+	res1 = ft_printf("[%06i]\n", -125);
+	res2 = printf("[%06i]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("-10.6i  i = -125");
+	res1 = ft_printf("[%-10.6i]\n", -125);
+	res2 = printf("[%-10.6i]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("-10.2i  i = -125");
+	res1 = ft_printf("[%-10.2i]\n", -125);
+	res2 = printf("[%-10.2i]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("10.6i  i = -125");
+	res1 = ft_printf("[%10.6i]\n", -125);
+	res2 = printf("[%10.6i]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("6.10i  i = -125");
+	res1 = ft_printf("[%6.10i]\n", -125);
+	res2 = printf("[%6.10i]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst(".2i  i = -125");
+	res1 = ft_printf("[%.2i]\n", -125);
+	res2 = printf("[%.2i]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	
 	return (0);
 }
