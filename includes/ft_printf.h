@@ -1,6 +1,5 @@
 #include <stdarg.h>
 #include <stdlib.h>
-#include "../libft/libft.h"
 
 #include <stdio.h>
 
@@ -13,6 +12,14 @@ typedef struct
 	int		type;
 }			t_print;
 
+int			ft_atoi(const char *nptr);
+int			ft_strlen(const char *s);
+char		*ft_itoa(int n);
+char		*ft_utoa(unsigned int n);
+char		*ft_utox(unsigned int n);
+char		*ft_utoxx(unsigned int n);
+void		ft_putstr(char *s);
+int			ft_isdigit(int c);
 int			ft_max(int a, int b);
 int			ft_min(int a, int b);
 void		init_param(t_print *param);
@@ -32,4 +39,3 @@ int			print_4int(t_print param, va_list args);
 int			print_5uns(t_print param, va_list args);
 int			print_6hex(t_print param, va_list args);
 int			print_7heX(t_print param, va_list args);
-

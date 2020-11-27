@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 17:58:07 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/10/20 23:55:39 by lle-briq         ###   ########.fr       */
+/*   Created: 2020/10/20 10:20:03 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/27 17:48:05 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int		ft_lstsize(t_list *lst)
+int		ft_isdigit(int c)
 {
-	int		s;
-
-	s = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		s++;
-	}
-	return (s);
+	return (c >= '0' && c <= '9');
 }

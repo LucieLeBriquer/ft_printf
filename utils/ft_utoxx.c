@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utoa.c                                          :+:      :+:    :+:   */
+/*   ft_utoxx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 11:14:48 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 14:58:17 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:49:54 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 #include <stdlib.h>
 
-static int	utoa_size(unsigned int nb)
+static int	utoX_size(unsigned int nb)
 {
-	if (nb < 10)
+	if (nb < 16)
 		return (1);
-	return (1 + utoa_size(nb / 10));
+	return (1 + utoX_size(nb / 16));
 }
 
-char		*ft_utoa(unsigned int n)
+char		*ft_utoxx(unsigned int n)
 {
-	char			*res;
-	int				i;
-	int				l;
+	char	*res;
+	char	*base;
+	int		i;
+	int		l;
 
-	l = utoa_size(n);
+	l = utoX_size(n);
+	base = "0123456789ABCDEF";
 	res = malloc((l + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
@@ -36,8 +38,8 @@ char		*ft_utoa(unsigned int n)
 	i = l - 1;
 	while (i >= 0)
 	{
-		res[i] = n % 10 + '0';
-		n = n / 10;
+		res[i] = base[n % 16];
+		n = n / 16;
 		i--;
 	}
 	return (res);

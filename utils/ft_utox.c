@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_utox.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 10:11:32 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/16 18:08:00 by lle-briq         ###   ########.fr       */
+/*   Created: 2020/10/20 11:14:48 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/27 17:49:45 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 #include <stdlib.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+static int	utox_size(unsigned int nb)
 {
-	void			*ptr;
-	unsigned char	*mem;
-	size_t			s;
-	size_t			i;
+	if (nb < 16)
+		return (1);
+	return (1 + utox_size(nb / 16));
+}
 
-	s = nmemb * size;
-	ptr = malloc(s);
-	if (!ptr)
+char		*ft_utox(unsigned int n)
+{
+	char	*res;
+	char	*base;
+	int		i;
+	int		l;
+
+	l = utox_size(n);
+	base = "0123456789abcdef";
+	res = malloc((l + 1) * sizeof(char));
+	if (!res)
 		return (NULL);
-	mem = (unsigned char *)ptr;
-	i = -1;
-	while (++i < s)
-		mem[i] = '\0';
-	return (ptr);
+	res[l] = '\0';
+	if (n == 0)
+		res[0] = '0';
+	i = l - 1;
+	while (i >= 0)
+	{
+		res[i] = base[n % 16];
+		n = n / 16;
+		i--;
+	}
+	return (res);
 }

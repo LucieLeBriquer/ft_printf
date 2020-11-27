@@ -4,7 +4,6 @@ RM			= rm -rf
 NAME		= libftprintf.a
 INCS		= ft_print.h
 INCS_DIR	= includes
-LIB			= includes/libft.a
 
 SRCS		= ft_printf.c \
 			parse/errors.c \
@@ -19,7 +18,15 @@ SRCS		= ft_printf.c \
 			print/print_7heX.c \
 			print/print.c \
 			utils/useful.c \
-			utils/tohelp.c
+			utils/tohelp.c \
+			utils/ft_atoi.c \
+			utils/ft_isdigit.c \
+			utils/ft_itoa.c \
+			utils/ft_putstr.c \
+			utils/ft_strlen.c \
+			utils/ft_utoa.c \
+			utils/ft_utox.c \
+			utils/ft_utoxx.c
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -29,17 +36,13 @@ OBJS		= $(SRCS:.c=.o)
 all			: $(NAME)
 
 $(NAME)		: $(OBJS)
-			make -C ./libft
-			cp libft/libft.* includes/
-			ar q libft/libft.a $(OBJS)
-			cp libft/libft.a libftprintf.a
+			ar rcs $(NAME) $(OBJS)
 		
 test		: all
 			$(CC) -I$(INCS_DIR) main.c $(NAME) -o tests
 			./tests
 
 clean:
-			make clean -C ./libft
 			$(RM) $(OBJS)
 
 fclean		: clean

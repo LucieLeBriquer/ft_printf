@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 11:17:51 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/16 17:47:35 by lle-briq         ###   ########.fr       */
+/*   Created: 2020/10/20 11:14:48 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/27 17:49:34 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+#include <stdlib.h>
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+static int	utoa_size(unsigned int nb)
 {
-	size_t	i;
-	size_t	j;
-	char	*sub;
+	if (nb < 10)
+		return (1);
+	return (1 + utoa_size(nb / 10));
+}
 
-	i = 0;
-	if (!s)
+char		*ft_utoa(unsigned int n)
+{
+	char			*res;
+	int				i;
+	int				l;
+
+	l = utoa_size(n);
+	res = malloc((l + 1) * sizeof(char));
+	if (!res)
 		return (NULL);
-	while (s[i] && i < start)
-		i++;
-	j = 0;
-	while (s[i] && i - start < len)
+	res[l] = '\0';
+	if (n == 0)
+		res[0] = '0';
+	i = l - 1;
+	while (i >= 0)
 	{
-		j++;
-		i++;
+		res[i] = n % 10 + '0';
+		n = n / 10;
+		i--;
 	}
-	sub = ft_calloc(j + 1, sizeof(char));
-	if (!sub)
-		return (NULL);
-	i = start;
-	while (i - start < j)
-	{
-		sub[i - start] = s[i];
-		i++;
-	}
-	return (sub);
+	return (res);
 }
