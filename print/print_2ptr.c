@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:50:53 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 16:06:07 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 18:28:06 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int			print_2ptr(t_print param, va_list args)
 	char			*to_print;
 	int				size;
 	int				len;
-	
+
 	ptr = (unsigned long)va_arg(args, void *);
 	if (ptr == 0)
 		return (print_ptr_null(param));

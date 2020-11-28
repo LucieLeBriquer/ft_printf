@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str.c                                           :+:      :+:    :+:   */
+/*   utils_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 11:17:51 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:09:58 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 18:34:22 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char		*ft_substr(const char *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-int		ft_strlen(const char *s)
+int			ft_strlen(const char *s)
 {
 	int	i;
 
@@ -72,7 +72,7 @@ int		ft_strlen(const char *s)
 	return (i);
 }
 
-void	ft_putstr(char *s)
+void		ft_putstr(char *s)
 {
 	size_t	l;
 

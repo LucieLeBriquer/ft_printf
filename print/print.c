@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/28 18:27:10 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/28 18:30:21 by lle-briq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	print_param(t_print param, va_list args, int *nb_char)
@@ -11,7 +23,7 @@ void	print_param(t_print param, va_list args, int *nb_char)
 	print_fun[4] = &print_4int;
 	print_fun[5] = &print_5uns;
 	print_fun[6] = &print_6hex;
-	print_fun[7] = &print_7heX;
+	print_fun[7] = &print_7hxx;
 	print_fun[8] = &print_8pct;
 	*nb_char += (print_fun[param.type])(param, args);
 }

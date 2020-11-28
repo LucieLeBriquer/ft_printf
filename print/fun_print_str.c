@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_str.c                                        :+:      :+:    :+:   */
+/*   fun_print_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 20:12:23 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 18:35:29 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,28 @@ static void	fill_str_left(char **to_print, char *str, t_print param, int size)
 	i = -1;
 	while (++i < to_keep)
 		(*to_print)[i] = str[i];
+}
+
+const char	*print_str_classic(const char *str, int *nb_char)
+{
+	char		*buf;
+	const char	*save;
+	int			i;
+
+	i = 0;
+	save = str;
+	while (*str && (*str != '%'))
+	{
+		str++;
+		i++;
+	}
+	buf = ft_substr(save, 0, i);
+	if (!buf)
+		return (NULL);
+	ft_putstr(buf);
+	free(buf);
+	(*nb_char) += i;
+	return (str);
 }
 
 void		fill_str_s(char **to_print, char *str, t_print param, int size)

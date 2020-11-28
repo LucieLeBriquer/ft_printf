@@ -49,5 +49,5 @@ int			print_3dbl(t_print param, va_list args);
 int			print_4int(t_print param, va_list args);
 int			print_5uns(t_print param, va_list args);
 int			print_6hex(t_print param, va_list args);
-int			print_7heX(t_print param, va_list args);
+int			print_7hxx(t_print param, va_list args);
 int			print_8pct(t_print param, va_list args);

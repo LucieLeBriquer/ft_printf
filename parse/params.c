@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   params.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/28 18:24:44 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/28 18:25:37 by lle-briq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void		init_param(t_print *param)
@@ -50,7 +62,7 @@ const char	*parse_param(t_print *param, const char *str, va_list args)
 	str = parse_align_zero(param, str);
 	while (param->type < 0)
 	{
-		while(*str == ' ' && str++)
+		while (*str == ' ' && str++)
 			write(1, " ", 1);
 		if (*str == '.' && str++)
 			param->precision = 1;

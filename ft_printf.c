@@ -6,16 +6,12 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:04:46 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 16:32:35 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 18:35:49 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*
-   0 1 2 3 4 5 6 7
-   c s p d i u x X
- */
 
 int			ft_printf(const char *str, ...)
 {

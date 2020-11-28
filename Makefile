@@ -15,14 +15,13 @@ SRCS		= ft_printf.c \
 			print/print_4int.c \
 			print/print_5uns.c \
 			print/print_6hex.c \
-			print/print_7heX.c \
+			print/print_7hexx.c \
 			print/print_8pct.c \
 			print/fun_print_str.c \
 			print/fun_print_int.c \
 			print/fun_print_int_bis.c \
 			print/print.c \
 			utils/useful.c \
-			utils/tohelp.c \
 			utils/utils_str.c \
 			utils/utils_int.c \
 			utils/nbtostr.c
