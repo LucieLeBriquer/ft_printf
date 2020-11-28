@@ -50,6 +50,8 @@ const char	*parse_param(t_print *param, const char *str, va_list args)
 	str = parse_align_zero(param, str);
 	while (param->type < 0)
 	{
+		while(*str == ' ' && str++)
+			write(1, " ", 1);
 		if (*str == '.' && str++)
 			param->precision = 1;
 		if (*str == '*' && str++)

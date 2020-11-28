@@ -1,8 +1,8 @@
 #include "ft_printf.h"
 
 /*
-   0 1 2 3 4 5 6 7
-   c s p d i u x X
+   0 1 2 3 4 5 6 7 8
+   c s p d i u x X %
  */
 
 int			is_type(char c)
@@ -23,34 +23,43 @@ int			is_type(char c)
 		return (6);
 	if (c == 'X')
 		return (7);
+	if (c == '%')
+		return (8);
 	return (-1);
 }
 
 int			is_coherent(const char *str)
 {
-	while (*str == '-' || *str == '0')
+	int		size;
+	int		type;
+
+	size = 0;
+	while ((*str == '-' || *str == '0') && size++)
 		str++;
-	if (*str == '*')
-		str++;
-	else
-	{
-		while (*str && ft_isdigit(*str))
-			str++;
-	}
-	if (*str == '.')
-		str++;
-	if (*str == '*')
+	if (*str == '*' && size++)
 		str++;
 	else
 	{
-		while (*str && ft_isdigit(*str))
+		while (*str && ft_isdigit(*str) && size++)
 			str++;
 	}
-	return (is_type(*str));
+	if (*str == '.' && size++)
+		str++;
+	if (*str == '*' && size++)
+		str++;
+	else
+	{
+		while (*str && ft_isdigit(*str) && size++)
+			str++;
+	}
+	type = is_type(*str);
+	return ((type == 8) + (type >= 0) - 1);
 }
 
 int			is_all_coherent(const char *str)
 {
+	int		type;
+
 	while (*str)
 	{
 		if (*str != '%')
@@ -58,8 +67,11 @@ int			is_all_coherent(const char *str)
 		else
 		{
 			str++;
-			if (is_coherent(str) < 0)
+			type = is_coherent(str);
+			if (type < 0)
 				return (0);
+			if (type == 1)
+				str++;
 		}
 	}
 	return (1);

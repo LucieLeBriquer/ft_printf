@@ -95,6 +95,14 @@ int		main()
 	res1 = ft_printf("[%40p]\n", ptr);
 	res2 = printf("[%40p]\n", ptr);
 	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("p  p = NULL");
+	res1 = ft_printf("[%p]\n", NULL);
+	res2 = printf("[%p]\n", NULL);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("p");
+	res1 = ft_printf("[%p]\n", ptr);
+	res2 = printf("[%p]\n", ptr);
+	printf("mine = %d\torig = %d\n", res1, res2);
 	/* pas de precision sur les pointeurs */
 	
 	printt("\n\n[ 3 - TESTS SUR LES INTD ]");
@@ -180,7 +188,11 @@ int		main()
 	res1 = ft_printf("[%.2i]\n", -125);
 	res2 = printf("[%.2i]\n", -125);
 	printf("mine = %d\torig = %d\n", res1, res2);
-	
+	printst(".2i  i = -125");
+	res1 = ft_printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
+	res2 = printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
+	printf("mine = %d\torig = %d\n", res1, res2);
+
 	printt("\n\n[ 5 - TESTS SUR LES UNSIGNED ]");
 	printst("-5u  u = 125");
 	res1 = ft_printf("[%-5u]\n", 125);
@@ -237,6 +249,12 @@ int		main()
 	printst("-5X  X = -125");
 	res1 = ft_printf("[%-5X]\n", -125);
 	res2 = printf("[%-5X]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	
+	printt("\n\n[ 8 - TESTS SUR LES PCT ]");
+	printst("\%\%");
+	res1 = ft_printf("[%%]\n", 125);
+	res2 = printf("[%%]\n", 125);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	return (0);
 }

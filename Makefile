@@ -16,6 +16,7 @@ SRCS		= ft_printf.c \
 			print/print_5uns.c \
 			print/print_6hex.c \
 			print/print_7heX.c \
+			print/print_8pct.c \
 			print/print.c \
 			utils/useful.c \
 			utils/tohelp.c \
