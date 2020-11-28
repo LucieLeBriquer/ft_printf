@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:24:37 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 22:37:25 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 23:45:27 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int			is_type(char c)
 	return (-1);
 }
 
-const char 	*is_coherent(const char *str)
+const char	*is_coherent(const char *str)
 {
 	while (*str == '-' || *str == '0' || *str == ' ')
 		str++;
