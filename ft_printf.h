@@ -1,8 +1,20 @@
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/28 18:37:17 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/28 18:38:27 by lle-briq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct
 {
@@ -34,9 +46,9 @@ const char	*print_str_classic(const char *str, int *nb_char);
 void		print_param(t_print p, va_list args, int *nb_char);
 int			ft_printf(const char *str, ...);
 void		fill_str_s(char **to_print, char *str, t_print param, int size);
-void		fill_int_right_p(char **to_print, char *nb, t_print param, int size);
+void		fill_int_right_p(char **to_print, char *nb, t_print par, int size);
 void		fill_int_right(char **to_print, char *nb, int size);
-void		fill_int_left_p(char **to_print, char *nb, t_print param, int size);
+void		fill_int_left_p(char **to_print, char *nb, t_print par, int size);
 void		fill_int_left(char **to_print, char *nb, int size);
 void		fill_int_zero(char **to_print, char *nb, int size);
 void		fill_int_easy(char **to_print, char *nb, int size);
@@ -51,3 +63,5 @@ int			print_5uns(t_print param, va_list args);
 int			print_6hex(t_print param, va_list args);
 int			print_7hxx(t_print param, va_list args);
 int			print_8pct(t_print param, va_list args);
+
+#endif
