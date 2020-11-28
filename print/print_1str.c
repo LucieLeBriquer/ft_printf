@@ -6,13 +6,13 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 20:23:18 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 18:07:15 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	size_tot(t_print param, int len)
+static int	size_str(t_print param, int len)
 {
 	if (param.precision == -1 || param.precision >= len)
 		return (ft_max(param.field, len) + 1);
@@ -29,7 +29,7 @@ static int	print_1str_null(t_print param)
 		str = "(null)";
 	else
 		str = "";
-	size = size_tot(param, ft_strlen(str));
+	size = size_str(param, ft_strlen(str));
 	to_print = malloc(size * sizeof(char));
 	if (!to_print)
 		return (0);
@@ -50,7 +50,7 @@ int		print_1str(t_print param, va_list args)
 	if (!str)
 		return (print_1str_null(param));
 	len = ft_strlen(str);
-	size = size_tot(param, len);
+	size = size_str(param, len);
 	if (size == 0)
 		return (0);
 	to_print = malloc(size * sizeof(char));

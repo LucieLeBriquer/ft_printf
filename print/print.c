@@ -1,10 +1,5 @@
 #include "ft_printf.h"
 
-/*
-   0 1 2 3 4 5 6 7
-   c s p d i u x X
- */
-
 void	print_param(t_print param, va_list args, int *nb_char)
 {
 	int	(*print_fun[9])(t_print, va_list);

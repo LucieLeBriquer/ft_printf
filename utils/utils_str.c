@@ -1,55 +1,83 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_str.c                                        :+:      :+:    :+:   */
+/*   ft_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/27 20:12:23 by lle-briq         ###   ########.fr       */
+/*   Created: 2020/10/20 11:17:51 by lle-briq          #+#    #+#             */
+/*   Updated: 2020/11/28 18:09:58 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-static void	fill_str_right(char **to_print, char *str, t_print param, int size)
+static void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		len;
-	int		to_keep;
-	int		i;
+	void			*ptr;
+	unsigned char	*mem;
+	size_t			s;
+	size_t			i;
 
-	len = ft_strlen(str);
-	to_keep = ft_min(param.precision, len);
+	s = nmemb * size;
+	ptr = malloc(s);
+	if (!ptr)
+		return (NULL);
+	mem = (unsigned char *)ptr;
 	i = -1;
-	(*to_print)[size - 1] = '\0';
-	while (++i < to_keep)
-		(*to_print)[size - to_keep + i - 1] = str[i];
-	i = -1;
-	while (++i < size - to_keep - 1)
-		(*to_print)[i] = ' ';
+	while (++i < s)
+		mem[i] = '\0';
+	return (ptr);
 }
 
-static void	fill_str_left(char **to_print, char *str, t_print param, int size)
+char		*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	int		len;
-	int		to_keep;
-	int		i;
+	size_t	i;
+	size_t	j;
+	char	*sub;
 
-	len = ft_strlen(str);
-	to_keep = ft_min(param.precision, len);
-	(*to_print)[size - 1] = '\0';
-	i = to_keep - 1;
-	while (++i < size - 1)
-		(*to_print)[i] = ' ';
-	i = -1;
-	while (++i < to_keep)
-		(*to_print)[i] = str[i];
+	i = 0;
+	if (!s)
+		return (NULL);
+	while (s[i] && i < start)
+		i++;
+	j = 0;
+	while (s[i] && i - start < len)
+	{
+		j++;
+		i++;
+	}
+	sub = ft_calloc(j + 1, sizeof(char));
+	if (!sub)
+		return (NULL);
+	i = start;
+	while (i - start < j)
+	{
+		sub[i - start] = s[i];
+		i++;
+	}
+	return (sub);
 }
 
-void		fill_str_s(char **to_print, char *str, t_print param, int size)
+int		ft_strlen(const char *s)
 {
-	if (param.align)
-		fill_str_left(to_print, str, param, size);
-	else
-		fill_str_right(to_print, str, param, size);
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+void	ft_putstr(char *s)
+{
+	size_t	l;
+
+	if (!s)
+		return ;
+	l = ft_strlen(s);
+	write(1, s, l);
 }

@@ -17,19 +17,15 @@ SRCS		= ft_printf.c \
 			print/print_6hex.c \
 			print/print_7heX.c \
 			print/print_8pct.c \
+			print/fun_print_str.c \
+			print/fun_print_int.c \
+			print/fun_print_int_bis.c \
 			print/print.c \
 			utils/useful.c \
 			utils/tohelp.c \
-			utils/ft_atoi.c \
-			utils/ft_isdigit.c \
-			utils/ft_itoa.c \
-			utils/ft_putstr.c \
-			utils/ft_strlen.c \
-			utils/ft_substr.c \
-			utils/ft_utoa.c \
-			utils/ft_utox.c \
-			utils/ft_utoxx.c \
-			utils/utils_str.c
+			utils/utils_str.c \
+			utils/utils_int.c \
+			utils/nbtostr.c
 
 OBJS		= $(SRCS:.c=.o)
 
