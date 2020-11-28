@@ -6,13 +6,19 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:50:53 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:28:06 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 23:27:29 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	fill_addr(unsigned long ptr, char **to_print, int start, int len)
+static void	fill_addr(unsigned long ptr, char **to_print, t_print param, int s)
+{
+	char	*base;
+
+	base = "0123456789abcdef";
+}
+/*static void	fill_addr(unsigned long ptr, char **to_print, int start, int len)
 {
 	char	*base;
 	int		i;
@@ -26,7 +32,7 @@ static void	fill_addr(unsigned long ptr, char **to_print, int start, int len)
 	}
 	(*to_print)[start + i] = 'x';
 	(*to_print)[start + i - 1] = '0';
-}
+}*/
 
 static void	init_print(char **to_print, int size)
 {
@@ -72,8 +78,9 @@ int			print_2ptr(t_print param, va_list args)
 	ptr = (unsigned long)va_arg(args, void *);
 	if (ptr == 0)
 		return (print_ptr_null(param));
-	len = size_ptr(ptr) + 2;
-	size = (param.field > len) ? param.field : len;
+	len = size_ptr(ptr);
+	size = ft_max(param.field, param.precision + 2);
+	size = ft_max(size, len + 2);
 	to_print = malloc((size + 1) * sizeof(char));
 	if (!to_print)
 		return (0);

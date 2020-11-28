@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:35:29 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 23:01:42 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ static void	fill_str_right(char **to_print, char *str, t_print param, int size)
 	int		i;
 
 	len = ft_strlen(str);
-	to_keep = ft_min(param.precision, len);
+	if (param.type == 2)
+		to_keep = len;
+	else
+		to_keep = ft_min(param.precision, len);
 	i = -1;
 	(*to_print)[size - 1] = '\0';
 	while (++i < to_keep)
@@ -36,7 +39,10 @@ static void	fill_str_left(char **to_print, char *str, t_print param, int size)
 	int		i;
 
 	len = ft_strlen(str);
-	to_keep = ft_min(param.precision, len);
+	if (param.type == 2)
+		to_keep = len;
+	else
+		to_keep = ft_min(param.precision, len);
 	(*to_print)[size - 1] = '\0';
 	i = to_keep - 1;
 	while (++i < size - 1)

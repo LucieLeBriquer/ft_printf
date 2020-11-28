@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:37:17 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:38:27 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 22:40:16 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char		*ft_itoa(int n);
 char		*ft_utoa(unsigned int n);
 char		*ft_utox(unsigned int n);
 char		*ft_utoxx(unsigned int n);
+char		*ft_utoct(unsigned int n);
 void		ft_putstr(char *s);
 int			ft_isdigit(int c);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
@@ -39,7 +40,6 @@ int			ft_min(int a, int b);
 void		init_param(t_print *param);
 void		print_param_useful(t_print p);
 int			is_type(char c);
-int			is_coherent(const char *str);
 const char	*parse_param(t_print *param, const char *str, va_list args);
 int			is_all_coherent(const char *str);
 const char	*print_str_classic(const char *str, int *nb_char);
@@ -63,5 +63,6 @@ int			print_5uns(t_print param, va_list args);
 int			print_6hex(t_print param, va_list args);
 int			print_7hxx(t_print param, va_list args);
 int			print_8pct(t_print param, va_list args);
+int			print_9oct(t_print param, va_list args);
 
 #endif

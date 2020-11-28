@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include <stdio.h>
 #include <limits.h>
 
 #define white "\033[0m"
@@ -95,6 +96,10 @@ int		main()
 	res1 = ft_printf("[%40p]\n", ptr);
 	res2 = printf("[%40p]\n", ptr);
 	printf("mine = %d\torig = %d\n", res1, res2);
+	printst(".10p");
+	res1 = ft_printf("[%.20p]\n", ptr);
+	res2 = printf("[%.20p]\n", ptr);
+	printf("mine = %d\torig = %d\n", res1, res2);
 	printst("p  p = NULL");
 	res1 = ft_printf("[%p]\n", NULL);
 	res2 = printf("[%p]\n", NULL);
@@ -103,7 +108,14 @@ int		main()
 	res1 = ft_printf("[%p]\n", ptr);
 	res2 = printf("[%p]\n", ptr);
 	printf("mine = %d\torig = %d\n", res1, res2);
-	/* pas de precision sur les pointeurs */
+	printst("5p p = NULL");
+	res1 = ft_printf("[%5p]\n", NULL);
+	res2 = printf("[%5p]\n", NULL);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst(".0p p = NULL");
+	res1 = ft_printf("[%.0p]\n", NULL);
+	res2 = printf("[%.0p]\n", NULL);
+	printf("mine = %d\torig = %d\n", res1, res2);
 	
 	printt("\n\n[ 3 - TESTS SUR LES INTD ]");
 	printst("5d  d = 125");

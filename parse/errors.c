@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:24:37 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:25:21 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/28 22:37:25 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,35 +32,32 @@ int			is_type(char c)
 		return (7);
 	if (c == '%')
 		return (8);
+	if (c == 'o')
+		return (9);
 	return (-1);
 }
 
-int			is_coherent(const char *str)
+const char 	*is_coherent(const char *str)
 {
-	int		size;
-	int		type;
-
-	size = 0;
-	while ((*str == '-' || *str == '0') && size++)
+	while (*str == '-' || *str == '0' || *str == ' ')
 		str++;
-	if (*str == '*' && size++)
+	if (*str == '*')
 		str++;
 	else
 	{
-		while (*str && ft_isdigit(*str) && size++)
+		while (*str && ft_isdigit(*str))
 			str++;
 	}
-	if (*str == '.' && size++)
+	if (*str == '.')
 		str++;
-	if (*str == '*' && size++)
+	if (*str == '*')
 		str++;
 	else
 	{
-		while (*str && ft_isdigit(*str) && size++)
+		while (*str && ft_isdigit(*str))
 			str++;
 	}
-	type = is_type(*str);
-	return ((type == 8) + (type >= 0) - 1);
+	return (str);
 }
 
 int			is_all_coherent(const char *str)
@@ -74,10 +71,11 @@ int			is_all_coherent(const char *str)
 		else
 		{
 			str++;
-			type = is_coherent(str);
+			str = is_coherent(str);
+			type = is_type(*str);
 			if (type < 0)
 				return (0);
-			if (type == 1)
+			if (type == 8)
 				str++;
 		}
 	}

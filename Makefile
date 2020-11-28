@@ -2,7 +2,8 @@ CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
 NAME		= libftprintf.a
-INCS		= ft_print.h
+INCS		= ft_printf.h
+INCS_DIR	= .
 
 SRCS		= ft_printf.c \
 			parse/errors.c \
@@ -16,18 +17,20 @@ SRCS		= ft_printf.c \
 			print/print_6hex.c \
 			print/print_7hexx.c \
 			print/print_8pct.c \
+			print/print_9oct.c \
 			print/fun_print_str.c \
 			print/fun_print_int.c \
 			print/fun_print_int_bis.c \
 			print/print.c \
 			utils/utils_str.c \
 			utils/utils_int.c \
-			utils/nbtostr.c
+			utils/nbtostr.c \
+			utils/nbtostr2.c
 
 OBJS		= $(SRCS:.c=.o)
 
 %.o			: %.c
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CFLAGS) -I$(INCS_DIR) -c $< -o $@
 
 all			: $(NAME)
 
