@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:50:53 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/29 20:00:00 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/29 20:43:22 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static int	print_ptr_null(t_print param)
 	char	*to_print;
 	int		size;
 
-	nul = "(nil)";
-	size = (param.field > 5) ? param.field : 5;
+	nul = "0x0";
+	size = (param.field > 3) ? param.field : 3;
 	to_print = malloc((size + 1) * sizeof(char));
 	if (!to_print)
 		return (0);

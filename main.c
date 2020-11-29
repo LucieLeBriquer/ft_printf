@@ -23,14 +23,78 @@ void	printst(char *str)
 	printf("\n%s>>> pour %s%s\n", cyan, str, white);
 }
 
+void	test_errors_mac()
+{
+	int	res1;
+	
+	printt("[ 8 - TESTS SUR LES PCT ]");
+	printst("%5%");
+	res1 = ft_printf("[%5%]\n");
+	printf("[    %%]\n");
+	printf("mine = %d\twanted = %d\n", res1, 8);
+	printst("%-5%");
+	res1 = ft_printf("[%-5%]\n");
+	printf("[%%    ]\n");
+	printf("mine = %d\twanted = %d\n", res1, 8);
+	printst("%05%");
+	res1 = ft_printf("[%05%]\n");
+	printf("[0000%%]\n");
+	printf("mine = %d\twanted = %d\n", res1, 8);
+	printst("%-05%");
+	res1 = ft_printf("[%-05%]\n");
+	printf("[%%0000]\n");
+	printf("mine = %d\twanted = %d\n", res1, 8);
+	
+	printt("[ 1 - TESTS SUR LES STR ]");
+	printst("%.03s  s = NULL");
+	res1 = ft_printf("[%.03s]\n", NULL);
+	printf("[(nu]\n");
+	printf("mine = %d\twanted = %d\n", res1, 6);
+	printst("%3.1s  s = NULL");
+	res1 = ft_printf("[%3.1s]\n", NULL);
+	printf("[  (]\n");
+	printf("mine = %d\twanted = %d\n", res1, 6);
+	printst("%9.1s  s = NULL");
+	res1 = ft_printf("[%9.1s]\n", NULL);
+	printf("[        (]\n");
+	printf("mine = %d\twanted = %d\n", res1, 12);
+	printst("%-3.1s  s = NULL");
+	res1 = ft_printf("[%-3.1s]\n", NULL);
+	printf("[(  ]\n");
+	printf("mine = %d\twanted = %d\n", res1, 6);
+	printst("%-9.1s  s = NULL");
+	res1 = ft_printf("[%-9.1s]\n", NULL);
+	printf("[(        ]\n");
+	printf("mine = %d\twanted = %d\n", res1, 12);
+	
+	printt("[ 2 - TESTS SUR LES PTR ]");
+	printst("%p  p = 0");
+	res1 = ft_printf("[%p]\n", 0);
+	printf("[0x0]\n");
+	printf("mine = %d\twanted = %d\n", res1, 6);
+	printst("%5p  p = 0");
+	res1 = ft_printf("[%5p]\n", 0);
+	printf("[  0x0]\n");
+	printf("mine = %d\twanted = %d\n", res1, 8);
+	printst("%.*p  p = 0  * = -3");
+	res1 = ft_printf("[%.*p]\n", -3, 0);
+	printf("[0x0]\n");
+	printf("mine = %d\twanted = %d\n", res1, 6);
+	printst("%.*p  p = 0  * = -1");
+	res1 = ft_printf("[%.*p]\n", -1, 0);
+	printf("[0x0]\n");
+	printf("mine = %d\twanted = %d\n", res1, 6);
+}
+
 int		main()
 {
+	test_errors_mac();
+/*	
 	int res1;
 	int res2;
 	int	*ptr;
 	
 	ptr = &res1;
-	
 	printt("[ 0 - TESTS SUR LES CHAR ]");
 	printst("6c  c='a'");
 	res1 = ft_printf("[%6c]\n", 'a');
@@ -280,5 +344,6 @@ int		main()
 	res1 = ft_printf("[%%]\n", 125);
 	res2 = printf("[%%]\n", 125);
 	printf("mine = %d\torig = %d\n", res1, res2);
+	*/
 	return (0);
 }

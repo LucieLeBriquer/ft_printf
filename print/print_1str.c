@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:27:24 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/29 20:49:29 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ static int	print_1str_null(t_print param)
 	char	*to_print;
 	int		size;
 
-	if ((param.precision == -1) || (param.precision >= 6))
-		str = "(null)";
-	else
-		str = "";
+	str = "(null)";
 	size = size_str(param, ft_strlen(str));
 	to_print = malloc(size * sizeof(char));
 	if (!to_print)
