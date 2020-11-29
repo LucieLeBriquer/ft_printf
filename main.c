@@ -266,6 +266,14 @@ int		main()
 	res1 = ft_printf("[%-5X]\n", -125);
 	res2 = printf("[%-5X]\n", -125);
 	printf("mine = %d\torig = %d\n", res1, res2);
+	printst(" -5X  X = 125");
+	res2 = printf("[% -5X]\n", 125);
+	res1 = ft_printf("[% -5X]\n", 125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("    -5X  X = 125");
+	res2 = printf("[%    -5X]\n", 125);
+	res1 = ft_printf("[%    -5X]\n", 125);
+	printf("mine = %d\torig = %d\n", res1, res2);
 	
 	printt("\n\n[ 8 - TESTS SUR LES PCT ]");
 	printst("\%\%");

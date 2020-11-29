@@ -6,12 +6,11 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:50:53 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/29 15:28:04 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/29 20:00:00 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 static int	print_ptr_null(t_print param)
 {
@@ -42,13 +41,13 @@ static void	fill_ptr(char **to_print, char *ptoa, t_print param, int size)
 		(*to_print)[i] = ' ';
 	if (param.align == 1)
 	{
-		i = -1; 
+		i = -1;
 		while (++i < len)
 			(*to_print)[i] = ptoa[i];
 	}
 	else
 	{
-		i = 0; 
+		i = 0;
 		while (++i <= len)
 			(*to_print)[size - i] = ptoa[len - i];
 	}
