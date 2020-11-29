@@ -126,9 +126,13 @@ int		main()
 	res1 = ft_printf("[%-5d]\n", 125);
 	res2 = printf("[%-5d]\n", 125);
 	printf("mine = %d\torig = %d\n", res1, res2);
-	printst("06d  d = -125");
-	res1 = ft_printf("[%06d]\n", -125);
-	res2 = printf("[%06d]\n", -125);
+	printst("06.0d  d = -125");
+	res1 = ft_printf("[%06.0d]\n", -125);
+	res2 = printf("[%06.0d]\n", -125);
+	printf("mine = %d\torig = %d\n", res1, res2);
+	printst("06d  d = 125");
+	res1 = ft_printf("[%06d]\n", 125);
+	res2 = printf("[%06d]\n", 125);
 	printf("mine = %d\torig = %d\n", res1, res2);
 	printst("-10.6d  d = -125");
 	res1 = ft_printf("[%-10.6d]\n", -125);

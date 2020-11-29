@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:26:16 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/29 19:38:47 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	fill_int(char **to_print, char *nb, t_print param, int size)
 		fill_int_left(to_print, nb, size);
 	else if (param.precision > prec)
 		fill_int_right_p(to_print, nb, param, size);
-	else if (param.precision > 0)
+	else if (param.precision >= 0)
 		fill_int_right(to_print, nb, size);
-	else if (!param.zero && param.field > 0)
+	else if (!param.zero && param.field >= 0)
 		fill_int_right(to_print, nb, size);
-	else if (param.zero && param.field > 0)
+	else if (param.zero && param.field >= 0)
 		fill_int_zero(to_print, nb, size);
 	else
 		fill_int_easy(to_print, nb, size);
