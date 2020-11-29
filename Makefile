@@ -23,8 +23,9 @@ SRCS		= ft_printf.c \
 			print/fun_print_int.c \
 			print/fun_print_int_bis.c \
 			print/print.c \
-			utils/utils_str.c \
 			utils/utils_int.c \
+			utils/utils_str.c \
+			utils/utils_ptr.c \
 			utils/nbtostr.c \
 			utils/nbtostr2.c
 

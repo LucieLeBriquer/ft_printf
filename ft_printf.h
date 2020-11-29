@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:37:17 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 22:40:16 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/29 15:26:02 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,14 @@ typedef struct
 
 int			ft_atoi(const char *nptr);
 int			ft_strlen(const char *s);
+int			size_int(t_print param, char *nb_itoa);
+int			size_ptr(unsigned long ptr, int prec);
 char		*ft_itoa(int n);
 char		*ft_utoa(unsigned int n);
 char		*ft_utox(unsigned int n);
 char		*ft_utoxx(unsigned int n);
 char		*ft_utoct(unsigned int n);
+char		*ft_ptoa(unsigned long ptr, int size);
 void		ft_putstr(char *s);
 int			ft_isdigit(int c);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
@@ -53,7 +56,6 @@ void		fill_int_left(char **to_print, char *nb, int size);
 void		fill_int_zero(char **to_print, char *nb, int size);
 void		fill_int_easy(char **to_print, char *nb, int size);
 void		fill_int(char **to_print, char *nb, t_print param, int size);
-int			size_int(t_print param, char *nb_itoa);
 int			print_0chr(t_print param, va_list args);
 int			print_1str(t_print param, va_list args);
 int			print_2ptr(t_print param, va_list args);
