@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/29 20:48:19 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/29 20:54:01 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		print_8pct(t_print param, va_list args)
 		return (0);
 	i = -1;
 	while (++i < size)
-		to_print[i] = (param.zero) ? '0' : ' ';
+		to_print[i] = (param.zero && !param.align) ? '0' : ' ';
 	if (param.align)
 		to_print[0] = '%';
 	else

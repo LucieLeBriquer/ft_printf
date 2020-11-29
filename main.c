@@ -42,7 +42,7 @@ void	test_errors_mac()
 	printf("mine = %d\twanted = %d\n", res1, 8);
 	printst("%-05%");
 	res1 = ft_printf("[%-05%]\n");
-	printf("[%%0000]\n");
+	printf("[%%    ]\n");
 	printf("mine = %d\twanted = %d\n", res1, 8);
 	
 	printt("[ 1 - TESTS SUR LES STR ]");
