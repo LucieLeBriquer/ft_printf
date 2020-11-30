@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 11:46:14 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/29 15:26:44 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/30 14:44:30 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int		size_ptr(unsigned long ptr, int prec)
 	int		i;
 
 	i = 0;
+	if (ptr == 0)
+		return (ft_max(1, prec) + 2);
 	while (ptr > 0)
 	{
 		ptr = ptr / 16;

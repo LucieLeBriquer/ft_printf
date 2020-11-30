@@ -6,28 +6,11 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:50:53 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/29 20:43:22 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/11/30 14:44:48 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	print_ptr_null(t_print param)
-{
-	char	*nul;
-	char	*to_print;
-	int		size;
-
-	nul = "0x0";
-	size = (param.field > 3) ? param.field : 3;
-	to_print = malloc((size + 1) * sizeof(char));
-	if (!to_print)
-		return (0);
-	fill_str_s(&to_print, nul, param, size + 1);
-	write(1, to_print, size);
-	free(to_print);
-	return (size);
-}
 
 static void	fill_ptr(char **to_print, char *ptoa, t_print param, int size)
 {
@@ -62,8 +45,6 @@ int			print_2ptr(t_print param, va_list args)
 	int				len;
 
 	ptr = (unsigned long)va_arg(args, void *);
-	if (ptr == 0)
-		return (print_ptr_null(param));
 	len = size_ptr(ptr, param.precision);
 	ptoa = ft_ptoa(ptr, len);
 	if (!ptoa)
