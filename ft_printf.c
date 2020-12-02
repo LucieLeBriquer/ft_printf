@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:04:46 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 23:44:35 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/02 17:49:49 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int			ft_printf(const char *str, ...)
 			print_param(param, args, &nb_char);
 		}
 	}
+	va_end(args);
 	return (nb_char);
 }
