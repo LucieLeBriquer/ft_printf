@@ -6,18 +6,18 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:05:27 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:09:00 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_5uns(t_print param, va_list args)
+int	print_5uns(t_print param, va_list args)
 {
-	unsigned	nb;
-	int			size;
-	char		*nb_utoa;
-	char		*to_print;
+	unsigned int	nb;
+	int				size;
+	char			*nb_utoa;
+	char			*to_print;
 
 	nb = (unsigned int)va_arg(args, int);
 	nb_utoa = ft_utoa(nb);

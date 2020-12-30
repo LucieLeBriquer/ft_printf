@@ -6,18 +6,18 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 23:11:33 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:09:19 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_6hex(t_print param, va_list args)
+int	print_6hex(t_print param, va_list args)
 {
-	unsigned	nb;
-	int			size;
-	char		*nb_utox;
-	char		*to_print;
+	unsigned int	nb;
+	int				size;
+	char			*nb_utox;
+	char			*to_print;
 
 	nb = (unsigned int)va_arg(args, int);
 	nb_utox = ft_utox(nb);

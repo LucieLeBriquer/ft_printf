@@ -6,13 +6,13 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:23:35 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:28:52 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:07:22 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_0chr(t_print param, va_list args)
+int	print_0chr(t_print param, va_list args)
 {
 	char	c;
 	char	*to_print;
@@ -20,8 +20,10 @@ int		print_0chr(t_print param, va_list args)
 	int		i;
 
 	c = va_arg(args, int);
-	size = (param.field > 0) ? param.field : 1;
-	to_print = malloc((size + 1) * sizeof(char));
+	size = 1;
+	if (param.field > 0)
+		size = param.field;
+	to_print = malloc((size + 1)*sizeof(char));
 	if (!to_print)
 		return (0);
 	i = -1;

@@ -4,7 +4,6 @@ RM			= rm -rf
 NAME		= libftprintf.a
 INCS		= ft_printf.h
 INCS_DIR	= .
-NORME		= ~/.norminette/norminette.rb
 
 SRCS		= ft_printf.c \
 			parse/errors.c \
@@ -44,7 +43,7 @@ test		: all
 			./tests
 
 norme		:
-			$(NORME) $(SRCS)
+			norminette $(SRCS)
 
 clean:
 			$(RM) $(OBJS)

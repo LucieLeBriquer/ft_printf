@@ -39,7 +39,7 @@ void	test_errors_mac()
 	int	res1;
 	int	res2;
 	
-	printt("[ 10 - TESTS SUR MAC ]");
+	printt("\n[ 10 - TESTS SUR MAC ]");
 	printst("%5%");
 	res1 = ft_printf("[%5%]\n");
 	printf("[    %%]\n");
@@ -347,7 +347,7 @@ int		main()
 	error(res1, res2);
 	
 	printt("\n\n[ 8 - TESTS SUR LES PCT ]");
-	printst("\%\%");
+	printst("%%");
 	res1 = ft_printf("[%%]\n", 125);
 	res2 = printf("[%%]\n", 125);
 	error(res1, res2);

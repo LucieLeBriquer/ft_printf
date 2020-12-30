@@ -6,13 +6,13 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:24:37 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/29 19:55:15 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:06:25 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			is_type(char c)
+int	is_type(char c)
 {
 	if (c == 'c')
 		return (0);
@@ -60,7 +60,7 @@ const char	*is_coherent(const char *str)
 	return (str);
 }
 
-int			is_all_coherent(const char *str)
+int	is_all_coherent(const char *str)
 {
 	int		type;
 

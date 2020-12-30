@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 11:46:14 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/30 14:44:30 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:17:52 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_ptoa(unsigned long ptr, int size)
 	int		i;
 
 	base = "0123456789abcdef";
-	res = malloc((size + 1) * sizeof(char));
+	res = malloc((size + 1)*sizeof(char));
 	if (!res)
 		return (NULL);
 	res[size] = '\0';
@@ -34,7 +34,7 @@ char	*ft_ptoa(unsigned long ptr, int size)
 	return (res);
 }
 
-int		size_ptr(unsigned long ptr, int prec)
+int	size_ptr(unsigned long ptr, int prec)
 {
 	int		i;
 

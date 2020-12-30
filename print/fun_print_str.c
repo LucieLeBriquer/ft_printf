@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:59:13 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 23:01:42 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:12:18 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ const char	*print_str_classic(const char *str, int *nb_char)
 	return (str);
 }
 
-void		fill_str_s(char **to_print, char *str, t_print param, int size)
+void	fill_str_s(char **to_print, char *str, t_print param, int size)
 {
 	if (param.align)
 		fill_str_left(to_print, str, param, size);

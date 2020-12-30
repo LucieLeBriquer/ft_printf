@@ -6,13 +6,13 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 21:51:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:04:56 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:08:06 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_4int(t_print param, va_list args)
+int	print_4int(t_print param, va_list args)
 {
 	int		nb;
 	int		size;

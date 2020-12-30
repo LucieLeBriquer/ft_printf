@@ -6,15 +6,17 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:27:10 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 22:43:01 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:19:16 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+typedef int	(*t_func)(t_print, va_list);
+
 void	print_param(t_print param, va_list args, int *nb_char)
 {
-	int	(*print_fun[10])(t_print, va_list);
+	t_func	print_fun[10];
 
 	print_fun[0] = &print_0chr;
 	print_fun[1] = &print_1str;

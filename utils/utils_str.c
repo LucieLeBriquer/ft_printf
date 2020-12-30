@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 11:17:51 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/28 18:34:22 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:17:42 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 
-char		*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -62,7 +62,7 @@ char		*ft_substr(const char *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-int			ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
@@ -72,7 +72,7 @@ int			ft_strlen(const char *s)
 	return (i);
 }
 
-void		ft_putstr(char *s)
+void	ft_putstr(char *s)
 {
 	size_t	l;
 
