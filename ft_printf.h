@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:37:17 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/11/29 15:26:02 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:22:43 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct
+typedef struct s_print
 {
 	int		align;
 	int		zero;
@@ -24,6 +24,8 @@ typedef struct
 	int		precision;
 	int		type;
 }			t_print;
+
+typedef int	(*t_func)(t_print, va_list);
 
 int			ft_atoi(const char *nptr);
 int			ft_strlen(const char *s);

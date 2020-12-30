@@ -43,7 +43,7 @@ test		: all
 			./tests
 
 norme		:
-			norminette $(SRCS)
+			norminette $(SRCS) $(INCS)
 
 clean:
 			$(RM) $(OBJS)

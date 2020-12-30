@@ -6,13 +6,11 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:27:10 by lle-briq          #+#    #+#             */
-/*   Updated: 2020/12/30 15:19:16 by lle-briq         ###   ########.fr       */
+/*   Updated: 2020/12/30 15:21:57 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-typedef int	(*t_func)(t_print, va_list);
 
 void	print_param(t_print param, va_list args, int *nb_char)
 {
